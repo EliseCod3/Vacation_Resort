@@ -3,20 +3,43 @@
 function getRoomRate(event) {
     event.preventDefault();
     let checkinDate = new Date(document.getElementById("check-in-date").value);
-    const numNights = document.querySelector(".num-of-days").value;
+    const numberOfNights = document.querySelector(".num-of-days").value;
     let price = 0;
-    let roomType = document.querySelector("input[name='radioRoomField']:checked").value;
+    let roomTypeSelected = document.querySelector("input[name='radioRoomField']:checked").value;
+    let currentMonth = checkinDate.getMonth();
+    let inSeason = false;
+    switch (currentMonth) {
+        case 5:
+        case 6:
+        case 7:
+            inSeason = true;
+            break;
+        default:
+            inSeason = false;
+            break;
+    }
+    if (inSeason) {
+        if(roomTypeSelected == "king" || roomTypeSelected == "queen") {
+            price = 250 * numberOfNights;
+        } else {
+            price = 350 * numberOfNights;
+        }
+    } else {
+        if (roomTypeSelected == "king" || roomTypeSelected == "queen") {
+            price = 150 * numberOfNights;
+        } else {
+            price = 210 * numberOfNights;
+        }
+    }
+    
+    let discount = 0;
+    const selectedDiscount = document.querySelector("input[name='radioDiscountField']:checked");
     
     
-    const date = new Date(checkinMonthvalue);
-    const month = date.getMonth();
-
-    let roomPerNightCost = 0;
-    console.log(month);
    
 
     
-    document.getElementById("estimatedRoomRate").innerText ;
+    document.getElementById("estimatedRoomRate").innerText =  ;
  
   }
   
@@ -25,10 +48,3 @@ function getRoomRate(event) {
 
   }
   console.log(getOriginalRoomCost(event));
-
-  function getDiscount(params) {
-    let seniorDiscount = document.getElementById("seniorSelect").checked;
-    let militaryDiscount = document.getElementById("militarySelect").checked;
-    
-    
-  }
