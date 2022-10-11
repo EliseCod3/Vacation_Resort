@@ -34,17 +34,19 @@ function getRoomRate(event) {
     
     let discount = 0;
     const selectedDiscount = document.querySelector("input[name='radioDiscountField']:checked");
-    
-    
-   
+    if (selectedDiscount && selectedDiscount.value == "senior") {
+        discount += 0.1 * price;
+    }
+    if (selectedDiscount && selectedDiscount.value == "military") {
+        discount += 0.2 * price;
+    }
+    let discountRoomCost = price - discount;
+    let taxCost = discountRoomCost * 0.12;
+    let totalCost = discountRoomCost + taxCost;
 
-    
-    document.getElementById("estimatedRoomRate").innerText =  ;
+    document.getElementById("estimatedOriginalRoomCost").innerText = `$ ${price}`;
+    document.getElementById("estimatedDiscounts").innerText = `$ ${discount}`;
+    document.getElementById("discountedRoomCost").innerText = `$ ${}`
  
   }
   
-  function getOriginalRoomCost() {
-    RoomRate = getRoomRate();
-
-  }
-  console.log(getOriginalRoomCost(event));
