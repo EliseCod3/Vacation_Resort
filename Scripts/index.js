@@ -1,9 +1,11 @@
 "use strict";
 
+
 function getRoomRate(event) {
     event.preventDefault();
     let checkinDate = new Date(document.getElementById("check-in-date").value);
-    const numberOfNights = document.querySelector(".num-of-days").value;
+    const numberOfNights = document.querySelector("num-of-days");
+
     let price = 0;
     let roomTypeSelected = document.querySelector("input[name='radioRoomField']:checked").value;
     let currentMonth = checkinDate.getMonth();
@@ -44,9 +46,22 @@ function getRoomRate(event) {
     let taxCost = discountRoomCost * 0.12;
     let totalCost = discountRoomCost + taxCost;
 
-    document.getElementById("estimatedOriginalRoomCost").innerText = `$ ${price}`;
-    document.getElementById("estimatedDiscounts").innerText = `$ ${discount}`;
-    document.getElementById("discountedRoomCost").innerText = `$ ${}`
- 
+    const originalRoomCost = document.getElementById("estimatedOriginalRoomCost");
+    const appliedDiscount = document.getElementById("estimatedDiscounts");
+    const roomCostWithDiscount = document.getElementById("discountedRoomCost");
+    const taxTotalCost = document.getElementById("taxCostTotal");
+    const stayingCost = document.getElementById("estimatedTotalStayCost");
+
+    //originalRoomCost.innerText = `$ `;
+    appliedDiscount.innerText = `$ ${discount}`;
+    roomCostWithDiscount.innerText = `$ ${discountRoomCost.toFixed(2)}`;
+    taxTotalCost.innerText = `$ ${taxCost.toFixed(2)}`;
+    stayingCost.innerText = `$ ${totalCost.toFixed(2)}`;
+
+    console.log(originalRoomCost.innerHTML);
+    console.log(appliedDiscount.innerText);
+    console.log(roomCostWithDiscount.innerText);
+    console.log(taxTotalCost.innerText);
+    console.log(stayingCost.innerText);
   }
   
