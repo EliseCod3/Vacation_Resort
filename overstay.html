@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/stylesheet.css">
     <title>Overnight Stay</title>
 </head>
 <style>
@@ -13,7 +14,7 @@
 <body>
     <header>Stay as long as you need</header>
     <!--Navbar-->
-    <ul class="nav justify-content-center">
+    <ul id="nav-bar" class="nav justify-content-center">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Active</a>
         </li>
@@ -29,6 +30,7 @@
       </ul>
       <!--form inputs-->
     <form onsubmit="getRoomRate(event);">
+      <div class="container">
         <fieldset>
           <legend>Name and contact</legend>
           <div class="row">
@@ -42,15 +44,19 @@
             </div>
           </div>
         </fieldset>
+      </div>
 
+      <div class="container">
         <fieldset>
             <legend>Check-in</legend>
             <label for="check-in-date">Pickup date:</label>
-            <input type="date" name="" id="check-in-date" /><br>
+            <input type="date" name="" id="check-in-date" />
             <label for="num-of-days">Number of Nights:</label>
             <input type="text" name="" id="num-of-days" />
         </fieldset>
+      </div>
 
+      <div class="container">
         <fieldset>
             <legend>Room Specifications</legend>
             <input type="radio" name="radioRoomField" id="queenSelect" value="queen">
@@ -60,15 +66,19 @@
             <input type="radio" name="radioRoomField" id="doubleBedroomSuitSelect" value="doubleroom">
             <label for="doubleBedroomSuitSelect">2-Bedroom Suit</label>
         </fieldset>
+      </div>
 
+      <div class="container">
         <fieldset>
             <legend>Accompaning Members</legend>
             <label for="num-of-adults">Number of Adults (1-4):</label>
-            <input type="text" name="" id="num-of-adults"><br>
+            <input type="text" name="" id="num-of-adults">
             <label for="num-of-children">Number of Children (0-4):</label>
             <input type="text" name="" id="num-of-children">
         </fieldset>
+      </div>
 
+      <div class="container">
         <fieldset>
             <legend>Discounts</legend>
             <input type="radio" name="radioDiscountField" id="noneSelect">
@@ -83,29 +93,33 @@
 
         <button type="submit">estimate stay cost</button>
 
+      </div>
+
+      <div id="resultbox" class="container">
         <!--result paragraph-->
         <tabel>
           <tr>
             <td>Estimated Room cost:</td>
             <td id="estimatedOriginalRoomCost"></td>
-          </tr>
+          </tr><br>
           <tr>
             <td>Discounts:</td>
             <td id="estimatedDiscounts"></td>
-          </tr>
+          </tr><br>
           <tr>
             <td>Room Cost with Discount/s:</td>
             <td id="discountedRoomCost"></td>
-          </tr>
+          </tr><br>
           <tr>
             <td>Tax:</td>
             <td id="taxCostTotal"></td>
-          </tr>
+          </tr><br>
           <tr>
             <td>Estimated Total Cost of Stay:</td>
             <td id="estimatedTotalStayCost"></td>
           </tr>
         </tabel>
+      </div>
 
     </form>
 
