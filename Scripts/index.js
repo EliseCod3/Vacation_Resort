@@ -45,6 +45,7 @@ function getRoomRate(event) {
     let discountRoomCost = price - discount;
     let taxCost = discountRoomCost * 0.12;
     let totalCost = discountRoomCost + taxCost;
+    displayResults(discountRoomCost, taxCost, totalCost)
 
 }
 
