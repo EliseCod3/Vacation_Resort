@@ -46,22 +46,20 @@ function getRoomRate(event) {
     let taxCost = discountRoomCost * 0.12;
     let totalCost = discountRoomCost + taxCost;
 
-    const originalRoomCost = document.getElementById("estimatedOriginalRoomCost");
-    const appliedDiscount = document.getElementById("estimatedDiscounts");
-    const roomCostWithDiscount = document.getElementById("discountedRoomCost");
-    const taxTotalCost = document.getElementById("taxCostTotal");
-    const stayingCost = document.getElementById("estimatedTotalStayCost");
+}
 
-    //originalRoomCost.innerText = `$ `;
-    appliedDiscount.innerText = `$ ${discount}`;
-    roomCostWithDiscount.innerText = `$ ${discountRoomCost.toFixed(2)}`;
-    taxTotalCost.innerText = `$ ${taxCost.toFixed(2)}`;
-    stayingCost.innerText = `$ ${totalCost.toFixed(2)}`;
-
-    console.log(originalRoomCost.innerHTML);
-    console.log(appliedDiscount.innerText);
-    console.log(roomCostWithDiscount.innerText);
-    console.log(taxTotalCost.innerText);
-    console.log(stayingCost.innerText);
+function displayResults(discountRoomCost, taxCost, totalCost) {
+    //   const originalRoomCost = document.getElementById("estimatedOriginalRoomCost");
+      const appliedDiscount = document.getElementById("estimatedDiscounts");
+      const roomCostWithDiscount = document.getElementById("discountedRoomCost");
+      const taxTotalCost = document.getElementById("taxCostTotal");
+      const stayingCost = document.getElementById("estimatedTotalStayCost");
+      
+      //originalRoomCost.innerText = `$ `;
+      appliedDiscount.innerText = `$ ${discount}`;
+      roomCostWithDiscount.innerText = `$ ${discountRoomCost.toFixed(2)}`;
+      taxTotalCost.innerText = `$ ${taxCost.toFixed(2)}`;
+      stayingCost.innerText = `$ ${totalCost.toFixed(2)}`;
+    
   }
   
