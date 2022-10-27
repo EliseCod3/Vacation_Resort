@@ -13,46 +13,70 @@
 </style>
 <body>
     <header>Stay as long as you need</header>
-    <!--Navbar-->
-    <ul id="nav-bar" class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
+    <div class="container">
+      <!--Navbar-->
+      <ul id="nav-bar" class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./overstay.html">Plan Your Stay</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+    </div>
+
       <!--form inputs-->
     <form onsubmit="getRoomRate(event);">
       <div class="container">
         <fieldset>
-          <legend>Name and contact</legend>
           <div class="row">
-            <div class="col">
-                <label for="customerFirstName" class="col-sm-2 col-form-label">First Name:</label>
+            <div class="col-md-6">
+              <legend>Name and contact</legend>
+            </div>
+            <div class="col-md-6">
+              <legend>Check-in</legend>
+            </div>
+          </div>
+          <div class="row">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="customerFirstName" class="col-sm-3 col-form-label">First Name:</label>
                 <input type="text" id="customer-first-name" required class="form-control" placeholder="First name" aria-label="First name">
+              </div>
+              <div class="col-md-6">
+                <label for="check-in-date" class="col-sm-5 col-form-label">Pickup date:</label><br>
+                <input type="date" name="" id="check-in-date" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
                 <label for="customerFirstName" class="col-sm-2 col-form-label">Last Name:</label>
                 <input type="text" id="customer-last-name" class="form-control" placeholder="Last name" aria-label="Last name">
+              </div>
+              <div class="col-md-6">
+                <label for="num-of-days">Number of Nights:</label><br>
+            <input type="text" name="" id="num-of-days" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
                 <label for="customer-email" class="col-sm-2 col-form-label">Email:</label>
                 <input type="email" class="form-control" id="customer-email">
+              </div>
             </div>
+
+            
           </div>
         </fieldset>
       </div>
 
       <div class="container">
         <fieldset>
-            <legend>Check-in</legend>
-            <label for="check-in-date">Pickup date:</label>
-            <input type="date" name="" id="check-in-date" />
-            <label for="num-of-days">Number of Nights:</label>
-            <input type="text" name="" id="num-of-days" />
+          
+            
         </fieldset>
       </div>
 
@@ -91,7 +115,7 @@
         </fieldset>
 
         <!--button-->
-        <button type="submit" onclick="displayResults()">estimate stay cost</button>
+        <button type="submit" id="submit-btn" class="btn btn-outline-dark">estimate stay cost</button>
 
       </div>
 
